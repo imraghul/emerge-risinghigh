@@ -562,7 +562,11 @@ h3 { font-family: 'DM Serif Display', serif; font-weight: 700; font-size: 22px; 
               radial-gradient(ellipse at 70% 50%,rgba(212,136,10,0.05),transparent 55%);
 }
 .pricing-inner { position: relative; z-index: 1; }
-.price-num { font-family: 'DM Serif Display',serif; font-weight: 900; font-size: 72px; color: var(--coral); line-height: 1; margin-bottom: 6px; }
+.price-num {
+  font-family: 'DM Serif Display',serif; font-weight: 900; font-size: 72px;
+  color: var(--coral); line-height: 1; margin-bottom: 6px;
+  display: inline-block;
+}
 .price-global { font-size: 16px; color: var(--muted); font-weight: 500; margin-bottom: 24px; }
 
 /* ══════════════════════
@@ -1276,7 +1280,9 @@ footer {
     </div>
     <div class="pricing-box">
       <div class="pricing-inner">
-        <div class="price-num">&#8377;25,000</div>
+        <div class="price-num">
+          <span>25,000 INR</span>
+        </div>
         <div class="price-global">USD 500 for global students</div>
 
         <div class="btn-grp" style="justify-content:center;margin-bottom:16px;">
