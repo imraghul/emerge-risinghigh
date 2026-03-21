@@ -5,8 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Emerge Summer Bootcamp | Rising High</title>
 <link rel="icon" type="image/svg+xml" href="Assets/favicon.svg">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</noscript>
 <style>
 /* ── RESET ── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -20,8 +25,8 @@
   --ink:   #1A0E00;
   --body:  #4A3018;
   --muted: #7A5C38;
-  --coral: #E04A1F;
-  --amber: #D4880A;
+  --coral: #B83A16;
+  --amber: #8F5B00;
   --teal:  #00796B;
   --violet:#5B21B6;
   --border: rgba(61,34,0,0.08);
@@ -286,8 +291,8 @@ h3 { font-family: 'DM Serif Display', serif; font-weight: 700; font-size: 22px; 
   letter-spacing: 0.12em; margin-bottom: 20px; display: flex;
   align-items: center; gap: 8px;
 }
-.diff-not .diff-head { color: rgba(255,255,255,0.4); }
-.diff-yes .diff-head { color: var(--coral); }
+.diff-not .diff-head { color: rgba(255,255,255,0.75); }
+.diff-yes .diff-head { color: #FFD6BA; }
 .diff-head svg { width: 16px; height: 16px; }
 .diff-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
 .diff-list li { font-size: 14.5px; color: rgba(255,255,255,0.75); display: flex; gap: 10px; align-items: flex-start; }
@@ -456,7 +461,7 @@ h3 { font-family: 'DM Serif Display', serif; font-weight: 700; font-size: 22px; 
   font-size: 20px; color: rgba(255,255,255,0.92); line-height: 1.65;
   border-left: 3px solid var(--amber); padding-left: 22px; margin-bottom: 0;
 }
-.trust-attr { font-size: 14px; font-weight: 600; color: var(--amber); }
+.trust-attr { font-size: 14px; font-weight: 600; color: #E7B35D; }
 .trust-attr span { color: rgba(255,255,255,0.5); font-weight: 400; }
 .trust-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
 .trust-chip {
@@ -479,7 +484,7 @@ h3 { font-family: 'DM Serif Display', serif; font-weight: 700; font-size: 22px; 
   flex-shrink: 0; color: var(--amber);
 }
 .ts-icon svg { width: 22px; height: 22px; }
-.ts-text strong { display: block; font-size: 22px; font-weight: 900; color: var(--amber); font-family: 'DM Serif Display',serif; }
+.ts-text strong { display: block; font-size: 22px; font-weight: 900; color: #F2C77D; font-family: 'DM Serif Display',serif; }
 .ts-text span   { font-size: 12px; color: rgba(255,255,255,0.5); }
 
 /* ══════════════════════
@@ -660,8 +665,8 @@ footer {
   display: flex; justify-content: space-between; align-items: center;
 }
 .f-brand { font-family: 'DM Serif Display',serif; font-weight: 700; font-size: 18px; color: white; }
-.f-brand span { color: var(--coral); }
-.f-copy { font-size: 12px; color: rgba(255,255,255,0.35); }
+.f-brand span { color: #FFB08D; }
+.f-copy { font-size: 12px; color: rgba(255,255,255,0.68); }
 
 /* ══════════════════════
    ANNOUNCEMENT BAR
@@ -712,7 +717,7 @@ footer {
 <nav>
   <div class="nav-brand">Rising <span>High</span></div>
   <div class="nav-right">
-    <a href="https://wa.me/919886111985?text=Hi%20Jyoti%2C%20I%20want%20to%20apply%20for%20Emerge." target="_blank" class="btn">
+    <a href="https://wa.me/919886111985?text=Hi%20Jyoti%2C%20I%20want%20to%20apply%20for%20Emerge." target="_blank" rel="noopener noreferrer" class="btn">
       Apply for Emerge
       <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
     </a>
@@ -764,7 +769,7 @@ footer {
       </div>
 
       <div class="hero-btns">
-        <a href="https://wa.me/919886111985?text=Hi%20Jyoti%2C%20I%20want%20to%20join%20the%20Emerge%20waitlist." target="_blank" class="btn btn-lg">
+        <a href="https://wa.me/919886111985?text=Hi%20Jyoti%2C%20I%20want%20to%20join%20the%20Emerge%20waitlist." target="_blank" rel="noopener noreferrer" class="btn btn-lg">
           Join the Waitlist
           <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
         </a>
@@ -1302,11 +1307,11 @@ footer {
         <div class="price-global">USD 500 for global students</div>
 
         <div class="btn-grp" style="justify-content:center;margin-bottom:16px;">
-          <a href="https://wa.me/919886111985?text=Hi%20Jyoti%2C%20I%20want%20to%20apply%20for%20Emerge." target="_blank" class="btn-coral btn-lg">
+          <a href="https://wa.me/919886111985?text=Hi%20Jyoti%2C%20I%20want%20to%20apply%20for%20Emerge." target="_blank" rel="noopener noreferrer" class="btn-coral btn-lg">
             Apply for Emerge
             <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
           </a>
-          <a href="https://wa.me/919886111985?text=Hi%20Jyoti%2C%20I%20have%20a%20question%20about%20Emerge." target="_blank" class="btn-ghost btn-lg">
+          <a href="https://wa.me/919886111985?text=Hi%20Jyoti%2C%20I%20have%20a%20question%20about%20Emerge." target="_blank" rel="noopener noreferrer" class="btn-ghost btn-lg">
             <i data-lucide="message-circle" style="width:15px;height:15px;"></i>
             I have a question
           </a>
@@ -1327,7 +1332,7 @@ footer {
         <span class="label">&#10022; The grand finale</span>
         <h2>See the transformation<br>yourself.</h2>
         <p class="lead" style="margin-bottom:32px;">On the last day of Emerge, every student stands up and presents – their project, their Life Blueprint, their growth. Parents watch live. Judges score. Certificates issued.</p>
-        <a href="https://wa.me/919886111985?text=Hi%20Jyoti%2C%20I%20want%20to%20apply%20for%20Emerge." target="_blank" class="btn-coral btn-lg">
+        <a href="https://wa.me/919886111985?text=Hi%20Jyoti%2C%20I%20want%20to%20apply%20for%20Emerge." target="_blank" rel="noopener noreferrer" class="btn-coral btn-lg">
           Apply Now
           <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
         </a>
@@ -1364,7 +1369,7 @@ footer {
       <h2>Give your child clarity<br>before the world confuses them.</h2>
       <p class="lead lead-center">This is the summer that could change how your child sees themselves and the world. 3 weeks. 25 students. One transformation.</p>
       <div class="btn-grp" style="justify-content:center;margin-top:22px;">
-        <a href="https://wa.me/919886111985?text=Hi%20Jyoti%2C%20I%20want%20to%20apply%20for%20Emerge." target="_blank" class="btn-coral btn-lg">
+        <a href="https://wa.me/919886111985?text=Hi%20Jyoti%2C%20I%20want%20to%20apply%20for%20Emerge." target="_blank" rel="noopener noreferrer" class="btn-coral btn-lg">
           Apply for Emerge
           <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
         </a>
@@ -1382,6 +1387,7 @@ footer {
   <div class="f-copy">&copy; 2026 Rising High &middot; Curriculum by IIM &amp; Microsoft Alumni</div>
 </footer>
 
+<script src="https://unpkg.com/lucide@0.577.0/dist/umd/lucide.min.js"></script>
 <script>
   // Initialize Lucide icons
   lucide.createIcons();
