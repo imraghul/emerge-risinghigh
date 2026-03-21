@@ -380,6 +380,29 @@ h3 { font-family: 'DM Serif Display', serif; font-weight: 700; font-size: 22px; 
   font-size: 11px; font-weight: 700; padding: 7px 16px; border-radius: 100px;
   margin-top: 4px; position: relative; z-index: 1;
 }
+.img-ph.has-image {
+  padding: 0;
+  gap: 0;
+  background: linear-gradient(135deg,#F5EDE0,#EDE0D4);
+  border-radius: 24px;
+  overflow: hidden;
+}
+.img-ph.has-image::before { display: none; }
+.img-ph.has-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1);
+  transition: transform 280ms ease;
+  will-change: transform;
+}
+.img-ph.has-image:hover img {
+  transform: scale(1.04);
+}
 
 /* ══════════════════════
    PROOF
@@ -391,6 +414,7 @@ h3 { font-family: 'DM Serif Display', serif; font-weight: 700; font-size: 22px; 
   border: 1.5px solid var(--border); box-shadow: 0 2px 12px rgba(0,0,0,0.05);
 }
 .proof-img { aspect-ratio: 4/3; }
+.proof-img.pos-down img { object-position: center 30%; }
 .proof-label { padding: 18px 20px; }
 .proof-label strong { display: block; font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
 .proof-label span   { font-size: 12.5px; color: var(--muted); }
@@ -425,10 +449,11 @@ h3 { font-family: 'DM Serif Display', serif; font-weight: 700; font-size: 22px; 
 ══════════════════════ */
 .trust-sec { background: var(--ink); padding: 96px 0; }
 .trust-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.trust-left { display: flex; flex-direction: column; gap: 16px; }
 .trust-quote {
   font-family: 'DM Serif Display',serif; font-style: italic;
   font-size: 20px; color: rgba(255,255,255,0.92); line-height: 1.65;
-  border-left: 3px solid var(--amber); padding-left: 22px; margin-bottom: 16px;
+  border-left: 3px solid var(--amber); padding-left: 22px; margin-bottom: 0;
 }
 .trust-attr { font-size: 14px; font-weight: 600; color: var(--amber); }
 .trust-attr span { color: rgba(255,255,255,0.5); font-weight: 400; }
@@ -475,6 +500,21 @@ h3 { font-family: 'DM Serif Display', serif; font-weight: 700; font-size: 22px; 
   align-items: center; justify-content: center;
   gap: 10px; position: relative; overflow: hidden;
 }
+.mentor-photo.has-image {
+  display: block;
+  background: transparent;
+}
+.mentor-photo.has-image::before { display: none; }
+.mentor-photo.has-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.mentor-photo.up-40 img { object-position: center 80%; }
+.mentor-photo.pos-30 img { object-position: center 30%; }
 .mentor-photo::before {
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(160deg, rgba(224,74,31,0.05), transparent 60%);
@@ -671,7 +711,7 @@ footer {
 <nav>
   <div class="nav-brand">Rising <span>High</span></div>
   <div class="nav-right">
-    <a href="#waitlist" class="btn">
+    <a href="https://wa.me/919886111985?text=Hi%20Jyoti%2C%20I%20want%20to%20apply%20for%20Emerge." target="_blank" class="btn">
       Apply for Emerge
       <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
     </a>
@@ -692,7 +732,7 @@ footer {
     <div>
       <div class="alumni-pill">
         <span class="tag-dot"></span>
-        Waitlist Open &middot; Cohort 1 &middot; April 2, 2025
+        Waitlist Open &middot; Cohort 1 &middot; April 2, 2026
       </div>
 
       <h1 class="hero-title">Emerge</h1>
@@ -721,7 +761,7 @@ footer {
       </div>
 
       <div class="hero-btns">
-        <a href="#waitlist" class="btn btn-lg">
+        <a href="https://wa.me/919886111985?text=Hi%20Jyoti%2C%20I%20want%20to%20join%20the%20Emerge%20waitlist." target="_blank" class="btn btn-lg">
           Join the Waitlist
           <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
         </a>
@@ -760,7 +800,7 @@ footer {
   <div class="info-strip">
     <div class="is-item">
       <span class="is-icon"><i data-lucide="calendar"></i></span>
-      <div class="is-text"><strong>April 2 – 18, 2025</strong><span>Mon &ndash; Fri &middot; 3 Weeks</span></div>
+      <div class="is-text"><strong>April 2 – 18, 2026</strong><span>Mon &ndash; Sat &middot; 3 Weeks</span></div>
     </div>
     <div class="is-item">
       <span class="is-icon"><i data-lucide="monitor"></i></span>
@@ -930,7 +970,7 @@ footer {
           <li><span class="wt-dot wt1"></span>Self discovery – values, identity &amp; emotional intelligence</li>
           <li><span class="wt-dot wt1"></span>How I think, learn &amp; make decisions</li>
           <li><span class="wt-dot wt1"></span>Money mindset – saving, compounding &amp; financial basics</li>
-          <li><span class="wt-dot wt1"></span>Speak, write &amp; pitch with clarity</li>
+         
         </ul>
         <div class="week-output">
           <span class="wo-label">Output</span>
@@ -967,6 +1007,7 @@ footer {
           <li><span class="wt-dot wt3"></span>Idea validation &amp; design thinking</li>
           <li><span class="wt-dot wt3"></span>Build a real app using AI tools – ChatGPT, Claude &amp; more</li>
           <li><span class="wt-dot wt3"></span>Demo Day – live pitch to judges &amp; parents</li>
+           <li><span class="wt-dot wt1"></span>Speak, write &amp; pitch with clarity</li>
         </ul>
         <div class="week-output">
           <span class="wo-label">Output</span>
@@ -1002,10 +1043,8 @@ footer {
           </div>
         </div>
       </div>
-      <div class="img-ph" style="min-height:400px;">
-        <div class="img-ph-icon"><i data-lucide="brain-circuit"></i></div>
-        <span class="img-ph-label">Student using AI tool<br>Laptop &middot; Focused &middot; Building</span>
-        <span class="img-ph-btn">Drop Image Here</span>
+      <div class="img-ph has-image" style="min-height:400px;">
+        <img src="Assets/1 - Student using AI tool laptop Building.png" alt="Student using AI tool on laptop">
       </div>
     </div>
   </div>
@@ -1023,10 +1062,8 @@ footer {
     </div>
     <div class="proof-grid">
       <div class="proof-card">
-        <div class="proof-img img-ph">
-          <div class="img-ph-icon"><i data-lucide="book-open"></i></div>
-          <span class="img-ph-label">Sample Life Blueprint<br>Screenshot or preview</span>
-          <span class="img-ph-btn">Add Sample</span>
+        <div class="proof-img img-ph has-image">
+          <img src="Assets/2 - Life Blueprint Screenshot or preview.png" alt="Life blueprint screenshot preview">
         </div>
         <div class="proof-label">
           <strong>Personal Life Blueprint</strong>
@@ -1034,10 +1071,8 @@ footer {
         </div>
       </div>
       <div class="proof-card">
-        <div class="proof-img img-ph">
-          <div class="img-ph-icon"><i data-lucide="mic-2"></i></div>
-          <span class="img-ph-label">Sample Pitch Deck<br>Slide preview</span>
-          <span class="img-ph-btn">Add Sample</span>
+        <div class="proof-img img-ph has-image pos-down">
+          <img src="Assets/3 - Pitch Deck Slide preview - v2.png" alt="Pitch deck slide preview">
         </div>
         <div class="proof-label">
           <strong>Startup Pitch</strong>
@@ -1045,10 +1080,8 @@ footer {
         </div>
       </div>
       <div class="proof-card">
-        <div class="proof-img img-ph">
-          <div class="img-ph-icon"><i data-lucide="rocket"></i></div>
-          <span class="img-ph-label">Sample AI Project<br>Screenshot or demo</span>
-          <span class="img-ph-btn">Add Sample</span>
+        <div class="proof-img img-ph has-image">
+          <img src="Assets/1 - Student using AI tool laptop Building v2.jpg" alt="Student using AI tool laptop building">
         </div>
         <div class="proof-label">
           <strong>Real Project</strong>
@@ -1107,19 +1140,12 @@ footer {
       <h2 style="color:white;">Built by Alumni from<br>IIM &amp; Microsoft</h2>
     </div>
     <div class="trust-inner">
-      <div>
-        <div class="img-ph" style="height:300px;border-radius:20px;margin-bottom:28px;background:rgba(255,255,255,0.06);">
-          <div class="img-ph-icon" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.4);">
-            <i data-lucide="user"></i>
-          </div>
-          <span class="img-ph-label" style="color:rgba(255,255,255,0.4);">Jyothi's photo<br>Warm &middot; Confident &middot; Natural</span>
-          <span class="img-ph-btn">Add Photo</span>
-        </div>
+      <div class="trust-left">
         <div class="trust-quote">
           "I have made more than 500 hiring decisions. The candidates who stood out were not always the smartest – they were the ones who knew themselves, communicated well, had clarity, and had built something with a strong portfolio. Emerge gives them that edge before anyone else does."
         </div>
-        <div class="trust-attr" style="margin-top:16px;">Jyothi Gopalan <span>&middot; Founder, Rising High &middot; Ex-Microsoft</span></div>
-        <div class="trust-chips" style="margin-top:20px;">
+        <div class="trust-attr">Jyoti Gopalan <span>&middot; Founder, Rising High &middot; Ex-Microsoft</span></div>
+        <div class="trust-chips">
           <span class="trust-chip"><i data-lucide="building-2"></i>Microsoft Alumni</span>
           <span class="trust-chip"><i data-lucide="graduation-cap"></i>IIM Alumni</span>
           <span class="trust-chip"><i data-lucide="mic"></i>1 Guest Speaker Per Week</span>
@@ -1166,63 +1192,50 @@ footer {
 
       <!-- Mentor 1 -->
       <div class="mentor-card">
-        <div class="mentor-photo">
-          <div class="mentor-photo-icon">
-            <i data-lucide="user" style="width:32px;height:32px;"></i>
-          </div>
-          <span class="mentor-photo-hint">Mentor Photo<br>Headshot &middot; 1:1 ratio</span>
-          <span class="mentor-photo-btn">Add Photo</span>
+        <div class="mentor-photo has-image up-40">
+          <img src="Assets/Jyoti Gopalan.jpg" alt="Jyoti Gopalan">
         </div>
         <div class="mentor-info">
-          <div class="mentor-name">Mentor Name</div>
-          <div class="mentor-role">Lead Facilitator</div>
-          <p class="mentor-qual">MBA, IIM Ahmedabad &middot; 10+ years in product &amp; strategy. Former consultant at McKinsey &amp; Co.</p>
+          <div class="mentor-name">Jyoti Gopalan</div>
+          <div class="mentor-role">Lead Facilitator &amp; Mindset Coach</div>
+          <p class="mentor-qual">Founder, Rising High &middot; Former HR, Microsoft &middot; Mentor</p>
           <div class="mentor-tags">
-            <span class="mentor-tag"><i data-lucide="briefcase"></i>Strategy</span>
-            <span class="mentor-tag"><i data-lucide="graduation-cap"></i>IIM</span>
-            <span class="mentor-tag"><i data-lucide="lightbulb"></i>Product</span>
+            <span class="mentor-tag"><i data-lucide="building-2"></i>Microsoft</span>
+            <span class="mentor-tag"><i data-lucide="rocket"></i>Founder</span>
+            <span class="mentor-tag"><i data-lucide="brain-circuit"></i>Mindset</span>
           </div>
         </div>
       </div>
 
       <!-- Mentor 2 -->
       <div class="mentor-card">
-        <div class="mentor-photo">
-          <div class="mentor-photo-icon">
-            <i data-lucide="user" style="width:32px;height:32px;"></i>
-          </div>
-          <span class="mentor-photo-hint">Mentor Photo<br>Headshot &middot; 1:1 ratio</span>
-          <span class="mentor-photo-btn">Add Photo</span>
+        <div class="mentor-photo has-image">
+          <img src="Assets/Raghul.jpg" alt="Raghul Gandhi">
         </div>
         <div class="mentor-info">
-          <div class="mentor-name">Mentor Name</div>
-          <div class="mentor-role">Finance &amp; Mindset Coach</div>
-          <p class="mentor-qual">CFA &middot; Ex-JP Morgan &middot; Helps young minds build a healthy relationship with money and decision-making.</p>
+          <div class="mentor-name">Raghul Gandhi</div>
+          <div class="mentor-role">AI &amp; Entrepreneurship Lead</div>
+          <p class="mentor-qual">Founder & Head of Product, Circleback &middot; Alumni MBA IIM Ranchi</p>
           <div class="mentor-tags">
-            <span class="mentor-tag"><i data-lucide="coins"></i>Finance</span>
-            <span class="mentor-tag"><i data-lucide="building-2"></i>Ex-JP Morgan</span>
-            <span class="mentor-tag"><i data-lucide="brain-circuit"></i>Mindset</span>
+            <span class="mentor-tag"><i data-lucide="graduation-cap"></i>IIM</span>
+            <span class="mentor-tag"><i data-lucide="rocket"></i>Founder</span>
+            <span class="mentor-tag"><i data-lucide="bot"></i>AI Lead</span>
           </div>
         </div>
       </div>
 
       <!-- Mentor 3 -->
       <div class="mentor-card">
-        <div class="mentor-photo">
-          <div class="mentor-photo-icon">
-            <i data-lucide="user" style="width:32px;height:32px;"></i>
-          </div>
-          <span class="mentor-photo-hint">Mentor Photo<br>Headshot &middot; 1:1 ratio</span>
-          <span class="mentor-photo-btn">Add Photo</span>
+        <div class="mentor-photo has-image pos-30">
+          <img src="Assets/Priyasha.jpeg" alt="Priyasha Gupta">
         </div>
         <div class="mentor-info">
-          <div class="mentor-name">Mentor Name</div>
-          <div class="mentor-role">AI &amp; Entrepreneurship Lead</div>
-          <p class="mentor-qual">B.Tech IIT &middot; Founder of two EdTech ventures &middot; Believes every student can ship something real using AI tools.</p>
+          <div class="mentor-name">Priyasha Gupta</div>
+          <div class="mentor-role">Finance Coach</div>
+          <p class="mentor-qual">IB Associate at SBI Capital Markets, MBA - Finance IIM Ranchi</p>
           <div class="mentor-tags">
-            <span class="mentor-tag"><i data-lucide="bot"></i>AI Tools</span>
-            <span class="mentor-tag"><i data-lucide="rocket"></i>Founder</span>
-            <span class="mentor-tag"><i data-lucide="graduation-cap"></i>IIT</span>
+            <span class="mentor-tag"><i data-lucide="graduation-cap"></i>IIM</span>
+            <span class="mentor-tag"><i data-lucide="coins"></i>Finance</span>
           </div>
         </div>
       </div>
@@ -1245,7 +1258,7 @@ footer {
         <div class="dc-icon-wrap"><i data-lucide="calendar-days"></i></div>
         <div class="dc-val">3 Weeks</div>
         <div class="dc-label">Duration</div>
-        <div class="dc-sub">April 2–18, 2026<br>Monday to Friday</div>
+        <div class="dc-sub">April 2–18, 2026<br>Monday to Saturday</div>
       </div>
       <div class="detail-card dc2">
         <div class="dc-icon-wrap"><i data-lucide="clock"></i></div>
@@ -1286,11 +1299,11 @@ footer {
         <div class="price-global">USD 500 for global students</div>
 
         <div class="btn-grp" style="justify-content:center;margin-bottom:16px;">
-          <a href="#" class="btn-coral btn-lg">
+          <a href="https://wa.me/919886111985?text=Hi%20Jyoti%2C%20I%20want%20to%20apply%20for%20Emerge." target="_blank" class="btn-coral btn-lg">
             Apply for Emerge
             <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
           </a>
-          <a href="https://wa.me/919999999999?text=Hi%20Jyothi%2C%20I%20have%20a%20question%20about%20Emerge." target="_blank" class="btn-ghost btn-lg">
+          <a href="https://wa.me/919886111985?text=Hi%20Jyoti%2C%20I%20have%20a%20question%20about%20Emerge." target="_blank" class="btn-ghost btn-lg">
             <i data-lucide="message-circle" style="width:15px;height:15px;"></i>
             I have a question
           </a>
@@ -1311,7 +1324,7 @@ footer {
         <span class="label">&#10022; The grand finale</span>
         <h2>See the transformation<br>yourself.</h2>
         <p class="lead" style="margin-bottom:32px;">On the last day of Emerge, every student stands up and presents – their project, their Life Blueprint, their growth. Parents watch live. Judges score. Certificates issued.</p>
-        <a href="#apply" class="btn-coral btn-lg">
+        <a href="https://wa.me/919886111985?text=Hi%20Jyoti%2C%20I%20want%20to%20apply%20for%20Emerge." target="_blank" class="btn-coral btn-lg">
           Apply Now
           <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
         </a>
@@ -1347,7 +1360,13 @@ footer {
       <span class="label">&#10022; One last thing</span>
       <h2>Give your child clarity<br>before the world confuses them.</h2>
       <p class="lead lead-center">This is the summer that could change how your child sees themselves and the world. 3 weeks. 25 students. One transformation.</p>
-      <p style="margin-top:20px;font-size:13px;color:#7A6848;">Mon–Fri &middot; Rising High &middot; risinghigh.in</p>
+      <div class="btn-grp" style="justify-content:center;margin-top:22px;">
+        <a href="https://wa.me/919886111985?text=Hi%20Jyoti%2C%20I%20want%20to%20apply%20for%20Emerge." target="_blank" class="btn-coral btn-lg">
+          Apply for Emerge
+          <i data-lucide="arrow-right" style="width:15px;height:15px;"></i>
+        </a>
+      </div>
+      <p style="margin-top:20px;font-size:13px;color:#7A6848;">Mon–Sat &middot; Rising High &middot; risinghigh.in</p>
     </div>
   </div>
 </section>
